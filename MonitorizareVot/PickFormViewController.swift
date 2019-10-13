@@ -42,10 +42,15 @@ class PickFormViewController: RootViewController {
     // MARK: - Handlers
     
     func handleAddNoteAction() {
-        let addNoteViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNoteViewController") as! AddNoteViewController
-        addNoteViewController.sectionInfo = sectionInfo
-        addNoteViewController.noteContainer = persistedSectionInfo
-        self.navigationController?.pushViewController(addNoteViewController, animated: true)
+        
+        let model = AddNoteViewModel(withSectionInfo: sectionInfo!)
+        let controller = AddNoteViewController(withModel: model)
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+//        let addNoteViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNoteViewController") as! AddNoteViewController
+//        addNoteViewController.sectionInfo = sectionInfo
+//        addNoteViewController.noteContainer = persistedSectionInfo
+//        self.navigationController?.pushViewController(addNoteViewController, animated: true)
     }
     
     @IBAction func syncData(_ button: UIButton) {

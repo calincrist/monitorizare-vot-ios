@@ -17,7 +17,7 @@ enum APIURLs {
         get {
             switch self {
             case .login:
-                return baseUrlQA + "/access/token"
+                return baseUrlQA + "/access/authorize"
             case .formsVersions:
                 return baseUrlQA + "/formular/versiune"
             case .forms:

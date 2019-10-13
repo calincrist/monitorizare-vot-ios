@@ -28,6 +28,12 @@ class LoginViewController: RootViewController, UITextFieldDelegate {
         centerButton?.isEnabled = false
         centerButton?.setTitle("Button_Authenticate".localized, for: .normal)
         developerBy?.text = "Label_DevelopedBy".localized
+        
+        
+        //  TODO: to be removed
+        phoneNumberTextField.text = "0722222222"
+        codeTextField.text = "1234"
+        centerButton?.isEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,9 +64,9 @@ class LoginViewController: RootViewController, UITextFieldDelegate {
             KeychainWrapper.standard.set(udid, forKey: "udid")
         }
         
-        let params: [String: Any] = ["phone":phoneNumberTextField.text ?? "",
-                                           "pin": codeTextField.text ?? "",
-                                           "udid": udid]
+        let params: [String: Any] = ["user":phoneNumberTextField.text ?? "",
+                                           "password": codeTextField.text ?? "",
+                                           "uniqueId": udid]
         
         loginAPIRequest?.perform(informations: params) {[weak self] success, response in
             self?.loadingView.isHidden = true

@@ -240,15 +240,15 @@ class QuestionViewController: RootViewController, UITableViewDataSource, UITable
         }
     }
     
-    // MARK: - ButtonHandler
+    //  MARK: - ButtonHandler
     func didTapOnButton() {
-        if let addNoteViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController {
-            addNoteViewController.delegate = self
-            addNoteViewController.sectionInfo = sectionInfo
-            addNoteViewController.note = question?.note
-            addNoteViewController.questionID = question?.id
-            self.navigationController?.pushViewController(addNoteViewController, animated: true)
-        }
+//        if let addNoteViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController {
+//            addNoteViewController.delegate = self
+//            addNoteViewController.sectionInfo = sectionInfo
+//            addNoteViewController.note = question?.note
+//            addNoteViewController.questionID = question?.id
+//            self.navigationController?.pushViewController(addNoteViewController, animated: true)
+//        }
     }
     
     // MARK: - AddNoteViewControllerDelegate
